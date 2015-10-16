@@ -1,11 +1,6 @@
 var path = require('path');
+var webpack = require('webpack');
 var LiveReloadPlugin = require('webpack-livereload-plugin');
-
-var customMarkerWithLabelPath = path.join(__dirname,
-  'node_modules',
-  'marker-animate-unobtrusive',
-  'vendor',
-  'markerwithlabel.terikon.js');
 
 module.exports = {
   entry: {
@@ -22,16 +17,11 @@ module.exports = {
       { test: /\.svg$/, loader: 'url-loader?mimetype=image/svg+xml' },
       { test: /\.woff(\d+)?$/, loader: 'url-loader?mimetype=application/font-woff' },
       { test: /\.eot$/, loader: 'url-loader?mimetype=application/font-woff' },
-      { test: /\.ttf$/, loader: 'url-loader?mimetype=application/font-woff' },
-      // custom markerwithlabel
-      { test: customMarkerWithLabelPath, loader: 'exports?MarkerWithLabel' }
+      { test: /\.ttf$/, loader: 'url-loader?mimetype=application/font-woff' }
     ]
   },
   resolve: {
     root: __dirname,
-    alias: {
-      MarkerWithLabel: customMarkerWithLabelPath
-    },
     extensions: ['', '.js', '.jsx', 'es6'],
     moduleDirectories: [
       'src',
@@ -39,6 +29,9 @@ module.exports = {
     ]
   },
   plugins: [
+    new webpack.ProvidePlugin({
+      "Promise": "es6-promise"
+    }),
     new LiveReloadPlugin({ appendScriptTag: true })
   ]
 };

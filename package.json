@@ -13,14 +13,12 @@
     "node": "4.2.1"
   },
   "dependencies": {
-    "bluebird": "^2.10.2",
     "bootstrap": "^3.3.5",
     "ejs": "^2.3.4",
+    "es6-promise": "4.0.5",
     "express": "^4.13.3",
     "geolib": "^2.0.18",
     "jquery": "^2.1.4",
-    "marker-animate-unobtrusive": "^0.2.7",
-    "markerwithlabel": "^1.1.12",
     "request": "^2.65.0",
     "sgeo": "0.0.3",
     "superagent": "^1.4.0"
