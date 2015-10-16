@@ -1,0 +1,38 @@
+{
+  "name": "webpack-demo",
+  "version": "1.0.0",
+  "description": "SlidingMarker and MarkerWithLabel with npm (webpack)",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "engine": {
+    "node": "4.2.1"
+  },
+  "dependencies": {
+    "bluebird": "^2.10.2",
+    "bootstrap": "^3.3.5",
+    "ejs": "^2.3.4",
+    "express": "^4.13.3",
+    "geolib": "^2.0.18",
+    "jquery": "^2.1.4",
+    "marker-animate-unobtrusive": "^0.2.7",
+    "markerwithlabel": "^1.1.12",
+    "request": "^2.65.0",
+    "sgeo": "0.0.3",
+    "superagent": "^1.4.0"
+  },
+  "devDependencies": {
+    "css-loader": "^0.19.0",
+    "exports-loader": "^0.6.2",
+    "expose-loader": "^0.7.0",
+    "file-loader": "^0.8.4",
+    "style-loader": "^0.12.4",
+    "url-loader": "^0.5.6",
+    "webpack": "^1.12.2",
+    "webpack-livereload-plugin": "^0.4.0"
+  }
+}
