@@ -3,6 +3,7 @@ require('bootstrap/dist/css/bootstrap.min.css');
 require('bootstrap/dist/css/bootstrap-theme.min.css');
 
 import ex1 from './examples/promise-while-loop';
+import ex2 from './examples/polyline';
 
 const $ = require('jquery');
 
@@ -21,13 +22,14 @@ const initialize = () => {
 
 $(function() {
   console.log('initialize');
-  ex1.exec();
-  /*
+
   const [ map, marker ] = initialize();
   console.log('initialize', map, marker);
 
   google.maps.event.addListener(map, 'click', function(event) {
     marker.setPosition(event.latLng);
   });
-  */
+
+  ex1.loopCounter(3);
+  ex2.exec(map);
 });

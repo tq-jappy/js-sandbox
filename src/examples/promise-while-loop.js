@@ -1,11 +1,11 @@
 const functions = {
 
-  exec() {
+  loopCounter(count=10) {
     console.log('start');
 
     const action = (i) => {
-      console.log(i);
-      return { done: i > 9, value: i+1 };
+      console.log('do action', i);
+      return { done: i >= count-1, value: i+1 };
     };
 
     const loop = (promise, fn) => {
