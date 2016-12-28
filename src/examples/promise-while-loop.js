@@ -17,6 +17,24 @@ const functions = {
     loop(Promise.resolve(0), action).then(result => {
       console.log('end: ', result);
     });
+  },
+
+  loopWhile(action, init, condition) {
+    console.log('start');
+
+    const loop = (promise, fn) => {
+      return promise.then(fn).then(_ => {
+        if (condition()) {
+          return loop(Promise.resolve(action), fn);
+        } else {
+          return;
+        }
+      });
+    };
+
+    return loop(Promise.resolve(init()), action).then(_ => {
+      console.log('end: ');
+    });
   }
 }
 

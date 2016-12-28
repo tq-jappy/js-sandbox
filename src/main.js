@@ -23,6 +23,7 @@ const initialize = () => {
 $(function() {
   console.log('initialize');
 
+/*
   const [ map, marker ] = initialize();
   console.log('initialize', map, marker);
 
@@ -32,4 +33,16 @@ $(function() {
 
   ex1.loopCounter(3);
   ex2.exec(map);
+*/
+  let i = 0;
+  const action = () => {
+    console.log('do loop', i++);
+  };
+  const init = () => {
+    console.log('start loop(main)');
+  };
+  const condition = () => {
+    return i < 15;
+  };
+  ex1.loopWhile(action, init, condition).then(_ => console.log('end loop(main)'));
 });
