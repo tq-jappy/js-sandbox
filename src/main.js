@@ -2,6 +2,8 @@
 require('bootstrap/dist/css/bootstrap.min.css');
 require('bootstrap/dist/css/bootstrap-theme.min.css');
 
+import ex1 from './examples/promise-while-loop';
+
 const $ = require('jquery');
 
 const initialize = () => {
@@ -18,6 +20,8 @@ const initialize = () => {
 };
 
 $(function() {
+  console.log('initialize');
+  ex1.exec();
   /*
   const [ map, marker ] = initialize();
   console.log('initialize', map, marker);
