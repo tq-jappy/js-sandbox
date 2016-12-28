@@ -12,8 +12,15 @@ module.exports = {
   },
   module: {
     loaders: [
+      {
+        test: /\.js$/,
+        loader: 'babel-loader',
+        exclude: /node_modules/,
+        query:{
+          presets: ['es2015']
+        }
+      },
       { test: /\.css$/, loader: 'style!css' },
-      // webfont
       { test: /\.svg$/, loader: 'url-loader?mimetype=image/svg+xml' },
       { test: /\.woff(\d+)?$/, loader: 'url-loader?mimetype=application/font-woff' },
       { test: /\.eot$/, loader: 'url-loader?mimetype=application/font-woff' },
@@ -22,7 +29,7 @@ module.exports = {
   },
   resolve: {
     root: __dirname,
-    extensions: ['', '.js', '.jsx', 'es6'],
+    extensions: ['', '.js'],
     moduleDirectories: [
       'src',
       'node_modules'
